@@ -23,3 +23,5 @@ father(X,Y):-parent(X,Y),male(X).
 mother(X,Y):-parent(X,Y),female(X).
 married(yair,lilach).
 married(X,Y):-parent(X,Z),parent(Y,Z),male(X),female(Y).
+siblings(X,Y):-parent(Z,X),parent(Z,Y),diff(X,Y).
+diff(X,Y):-not(X=Y).
