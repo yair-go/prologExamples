@@ -25,3 +25,10 @@ married(yair,lilach).
 married(X,Y):-parent(X,Z),parent(Y,Z),male(X),female(Y).
 siblings(X,Y):-parent(Z,X),parent(Z,Y),diff(X,Y).
 diff(X,Y):-not(X=Y).
+gcd(X,Y,X):-Y=0.
+gcd(X,Y,Z):-Y1 is X - Y,gcd(Y,Y1,Z).
+palindrom([]).
+palindrom([_]).
+palindrom([H|L]):-append(R,[H],L),palindrom(R).
+isList([]).
+isList([_|_]).
